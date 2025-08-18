@@ -352,7 +352,7 @@ var File_account_service_proto protoreflect.FileDescriptor
 
 const file_account_service_proto_rawDesc = "" +
 	"\n" +
-	"\x15account_service.proto\x12\aaccount\x1a\x1cgoogle/api/annotations.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1baccount/account_model.proto\x1a\x1bpagination/pagination.proto\"<\n" +
+	"\x15account_service.proto\x12\aaccount\x1a\x1cgoogle/api/annotations.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x13account_model.proto\x1a\x1bpagination/pagination.proto\"<\n" +
 	"\x11CreateUserRequest\x12'\n" +
 	"\x04user\x18\x01 \x01(\v2\x13.account.CreateUserR\x04user\")\n" +
 	"\x0eGetUserRequest\x12\x17\n" +
@@ -438,7 +438,7 @@ func file_account_service_proto_init() {
 	if File_account_service_proto != nil {
 		return
 	}
-	file_account_account_model_proto_init()
+	file_account_model_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
