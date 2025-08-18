@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.36.7
 // 	protoc        v5.27.1
-// source: account/account_model.proto
+// source: account_model.proto
 
 package account
 
@@ -37,7 +37,7 @@ type CreateUser struct {
 
 func (x *CreateUser) Reset() {
 	*x = CreateUser{}
-	mi := &file_account_account_model_proto_msgTypes[0]
+	mi := &file_account_model_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -49,7 +49,7 @@ func (x *CreateUser) String() string {
 func (*CreateUser) ProtoMessage() {}
 
 func (x *CreateUser) ProtoReflect() protoreflect.Message {
-	mi := &file_account_account_model_proto_msgTypes[0]
+	mi := &file_account_model_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -62,7 +62,7 @@ func (x *CreateUser) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateUser.ProtoReflect.Descriptor instead.
 func (*CreateUser) Descriptor() ([]byte, []int) {
-	return file_account_account_model_proto_rawDescGZIP(), []int{0}
+	return file_account_model_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *CreateUser) GetLogin() string {
@@ -137,7 +137,7 @@ type User struct {
 
 func (x *User) Reset() {
 	*x = User{}
-	mi := &file_account_account_model_proto_msgTypes[1]
+	mi := &file_account_model_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -149,7 +149,7 @@ func (x *User) String() string {
 func (*User) ProtoMessage() {}
 
 func (x *User) ProtoReflect() protoreflect.Message {
-	mi := &file_account_account_model_proto_msgTypes[1]
+	mi := &file_account_model_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -162,7 +162,7 @@ func (x *User) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use User.ProtoReflect.Descriptor instead.
 func (*User) Descriptor() ([]byte, []int) {
-	return file_account_account_model_proto_rawDescGZIP(), []int{1}
+	return file_account_model_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *User) GetId() uint64 {
@@ -221,11 +221,11 @@ func (x *User) GetAge() uint32 {
 	return 0
 }
 
-var File_account_account_model_proto protoreflect.FileDescriptor
+var File_account_model_proto protoreflect.FileDescriptor
 
-const file_account_account_model_proto_rawDesc = "" +
+const file_account_model_proto_rawDesc = "" +
 	"\n" +
-	"\x1baccount/account_model.proto\x12\aaccount\"\xd9\x01\n" +
+	"\x13account_model.proto\x12\aaccount\"\xd9\x01\n" +
 	"\n" +
 	"CreateUser\x12\x14\n" +
 	"\x05login\x18\x01 \x01(\tR\x05login\x12\x14\n" +
@@ -248,26 +248,26 @@ const file_account_account_model_proto_rawDesc = "" +
 	"\vmiddle_name\x18\x06 \x01(\tR\n" +
 	"middleName\x12\x14\n" +
 	"\x05email\x18\a \x01(\tR\x05email\x12\x10\n" +
-	"\x03age\x18\b \x01(\rR\x03ageB6Z4github.com/yuliaapopova/contracts/account/go;accountb\x06proto3"
+	"\x03age\x18\b \x01(\rR\x03ageB<Z:github.com/yuliaapopova/contracts/account/langs/go;accountb\x06proto3"
 
 var (
-	file_account_account_model_proto_rawDescOnce sync.Once
-	file_account_account_model_proto_rawDescData []byte
+	file_account_model_proto_rawDescOnce sync.Once
+	file_account_model_proto_rawDescData []byte
 )
 
-func file_account_account_model_proto_rawDescGZIP() []byte {
-	file_account_account_model_proto_rawDescOnce.Do(func() {
-		file_account_account_model_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_account_account_model_proto_rawDesc), len(file_account_account_model_proto_rawDesc)))
+func file_account_model_proto_rawDescGZIP() []byte {
+	file_account_model_proto_rawDescOnce.Do(func() {
+		file_account_model_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_account_model_proto_rawDesc), len(file_account_model_proto_rawDesc)))
 	})
-	return file_account_account_model_proto_rawDescData
+	return file_account_model_proto_rawDescData
 }
 
-var file_account_account_model_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
-var file_account_account_model_proto_goTypes = []any{
+var file_account_model_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
+var file_account_model_proto_goTypes = []any{
 	(*CreateUser)(nil), // 0: account.CreateUser
 	(*User)(nil),       // 1: account.User
 }
-var file_account_account_model_proto_depIdxs = []int32{
+var file_account_model_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for method output_type
 	0, // [0:0] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
@@ -275,26 +275,26 @@ var file_account_account_model_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for field type_name
 }
 
-func init() { file_account_account_model_proto_init() }
-func file_account_account_model_proto_init() {
-	if File_account_account_model_proto != nil {
+func init() { file_account_model_proto_init() }
+func file_account_model_proto_init() {
+	if File_account_model_proto != nil {
 		return
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_account_account_model_proto_rawDesc), len(file_account_account_model_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_account_model_proto_rawDesc), len(file_account_model_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   2,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_account_account_model_proto_goTypes,
-		DependencyIndexes: file_account_account_model_proto_depIdxs,
-		MessageInfos:      file_account_account_model_proto_msgTypes,
+		GoTypes:           file_account_model_proto_goTypes,
+		DependencyIndexes: file_account_model_proto_depIdxs,
+		MessageInfos:      file_account_model_proto_msgTypes,
 	}.Build()
-	File_account_account_model_proto = out.File
-	file_account_account_model_proto_goTypes = nil
-	file_account_account_model_proto_depIdxs = nil
+	File_account_model_proto = out.File
+	file_account_model_proto_goTypes = nil
+	file_account_model_proto_depIdxs = nil
 }
