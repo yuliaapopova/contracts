@@ -1,7 +1,5 @@
 PROTO_ROOT=.
 DOCKER_IMAGE=proto-builder
-
-# Ищем proto только в account и pagination
 PROTO_FILES=$(shell find account pagination -name '*.proto')
 
 .PHONY: docker-build gen clean
@@ -10,7 +8,6 @@ docker-build:
 	docker build -t $(DOCKER_IMAGE) .
 
 gen: docker-build
-	# для каждого каталога создаём go/
 	@for dir in account pagination; do \
 	  mkdir -p $$dir/go; \
 	done

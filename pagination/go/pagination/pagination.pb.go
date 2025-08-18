@@ -101,7 +101,7 @@ const file_pagination_pagination_proto_rawDesc = "" +
 	"\x05limit\x18\x02 \x01(\rR\x05limit\x12\x14\n" +
 	"\x05total\x18\x03 \x01(\x04R\x05total\x12\x1f\n" +
 	"\vtotal_pages\x18\x04 \x01(\rR\n" +
-	"totalPagesB;Z9github.com/yuliapopova/contracts/pagination/go;paginationb\x06proto3"
+	"totalPagesB<Z:github.com/yuliaapopova/contracts/pagination/go;paginationb\x06proto3"
 
 var (
 	file_pagination_pagination_proto_rawDescOnce sync.Once
