@@ -248,7 +248,7 @@ const file_account_model_proto_rawDesc = "" +
 	"\vmiddle_name\x18\x06 \x01(\tR\n" +
 	"middleName\x12\x14\n" +
 	"\x05email\x18\a \x01(\tR\x05email\x12\x10\n" +
-	"\x03age\x18\b \x01(\rR\x03ageB<Z:github.com/yuliaapopova/contracts/account/langs/go;accountb\x06proto3"
+	"\x03age\x18\b \x01(\rR\x03ageB6Z4github.com/yuliaapopova/contracts/account/go;accountb\x06proto3"
 
 var (
 	file_account_model_proto_rawDescOnce sync.Once
