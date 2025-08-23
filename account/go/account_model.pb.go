@@ -9,6 +9,7 @@ package account
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
+	timestamppb "google.golang.org/protobuf/types/known/timestamppb"
 	reflect "reflect"
 	sync "sync"
 	unsafe "unsafe"
@@ -131,6 +132,8 @@ type User struct {
 	MiddleName    string                 `protobuf:"bytes,6,opt,name=middle_name,json=middleName,proto3" json:"middle_name,omitempty"`
 	Email         string                 `protobuf:"bytes,7,opt,name=email,proto3" json:"email,omitempty"`
 	Age           uint32                 `protobuf:"varint,8,opt,name=age,proto3" json:"age,omitempty"`
+	CreatedAt     *timestamppb.Timestamp `protobuf:"bytes,9,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
+	UpdatedAt     *timestamppb.Timestamp `protobuf:"bytes,10,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -221,11 +224,25 @@ func (x *User) GetAge() uint32 {
 	return 0
 }
 
+func (x *User) GetCreatedAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.CreatedAt
+	}
+	return nil
+}
+
+func (x *User) GetUpdatedAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.UpdatedAt
+	}
+	return nil
+}
+
 var File_account_model_proto protoreflect.FileDescriptor
 
 const file_account_model_proto_rawDesc = "" +
 	"\n" +
-	"\x13account_model.proto\x12\aaccount\"\xd9\x01\n" +
+	"\x13account_model.proto\x12\aaccount\x1a\x1fgoogle/protobuf/timestamp.proto\"\xd9\x01\n" +
 	"\n" +
 	"CreateUser\x12\x14\n" +
 	"\x05login\x18\x01 \x01(\tR\x05login\x12\x14\n" +
@@ -237,7 +254,7 @@ const file_account_model_proto_rawDesc = "" +
 	"middleName\x12\x14\n" +
 	"\x05email\x18\x06 \x01(\tR\x05email\x12\x10\n" +
 	"\x03age\x18\a \x01(\rR\x03age\x12\x1a\n" +
-	"\bpassword\x18\b \x01(\tR\bpassword\"\xc7\x01\n" +
+	"\bpassword\x18\b \x01(\tR\bpassword\"\xbd\x02\n" +
 	"\x04User\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\x04R\x02id\x12\x14\n" +
 	"\x05login\x18\x02 \x01(\tR\x05login\x12\x14\n" +
@@ -248,7 +265,12 @@ const file_account_model_proto_rawDesc = "" +
 	"\vmiddle_name\x18\x06 \x01(\tR\n" +
 	"middleName\x12\x14\n" +
 	"\x05email\x18\a \x01(\tR\x05email\x12\x10\n" +
-	"\x03age\x18\b \x01(\rR\x03ageB6Z4github.com/yuliaapopova/contracts/account/go;accountb\x06proto3"
+	"\x03age\x18\b \x01(\rR\x03age\x129\n" +
+	"\n" +
+	"created_at\x18\t \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x129\n" +
+	"\n" +
+	"updated_at\x18\n" +
+	" \x01(\v2\x1a.google.protobuf.TimestampR\tupdatedAtB6Z4github.com/yuliaapopova/contracts/account/go;accountb\x06proto3"
 
 var (
 	file_account_model_proto_rawDescOnce sync.Once
@@ -264,15 +286,18 @@ func file_account_model_proto_rawDescGZIP() []byte {
 
 var file_account_model_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_account_model_proto_goTypes = []any{
-	(*CreateUser)(nil), // 0: account.CreateUser
-	(*User)(nil),       // 1: account.User
+	(*CreateUser)(nil),            // 0: account.CreateUser
+	(*User)(nil),                  // 1: account.User
+	(*timestamppb.Timestamp)(nil), // 2: google.protobuf.Timestamp
 }
 var file_account_model_proto_depIdxs = []int32{
-	0, // [0:0] is the sub-list for method output_type
-	0, // [0:0] is the sub-list for method input_type
-	0, // [0:0] is the sub-list for extension type_name
-	0, // [0:0] is the sub-list for extension extendee
-	0, // [0:0] is the sub-list for field type_name
+	2, // 0: account.User.created_at:type_name -> google.protobuf.Timestamp
+	2, // 1: account.User.updated_at:type_name -> google.protobuf.Timestamp
+	2, // [2:2] is the sub-list for method output_type
+	2, // [2:2] is the sub-list for method input_type
+	2, // [2:2] is the sub-list for extension type_name
+	2, // [2:2] is the sub-list for extension extendee
+	0, // [0:2] is the sub-list for field type_name
 }
 
 func init() { file_account_model_proto_init() }
