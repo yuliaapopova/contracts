@@ -5,7 +5,7 @@ option go_package = "github.com/yuliaapopova/contracts/account/go;account";
 
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
-import "account_model.proto";
+import "account/account_model.proto";
 import "pagination/pagination.proto";
 
 service Account {
@@ -41,7 +41,7 @@ service Account {
 }
 
 message CreateUserRequest {
-    CreateUser user = 1;
+    account.CreateUser user = 1;
 }
 
 message GetUserRequest {
@@ -57,7 +57,7 @@ message GetUsersRequest {
 }
 
 message GetUsersResponse {
-    repeated User users = 1;
+    repeated account.User users = 1;
     pagination.Pagination pagination = 2;
 }
 
