@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package gateway;
+option go_package = "github.com/yuliaapopova/contracts/gateway/go;gateway";
+
+import "google/protobuf/timestamp.proto";
+
+// Gateway-specific shared models
+
+// Локальная модель пары токенов
+message TokenPair {
+    string access_token = 1;
+    string refresh_token = 2;
+}
+
+// Модели для ошибок
+message Error {
+    string code = 1;
+    string message = 2;
+    map<string, string> details = 3;
+}
+
+// Модели для метаданных запросов
+message RequestMetadata {
+    string user_agent = 1;
+    string ip_address = 2;
+    string request_id = 3;
+    google.protobuf.Timestamp timestamp = 4;
+}
+
+// Модели для ответов с метаданными
+message ResponseMetadata {
+    string request_id = 1;
+    google.protobuf.Timestamp timestamp = 2;
+    uint32 status_code = 3;
+}
