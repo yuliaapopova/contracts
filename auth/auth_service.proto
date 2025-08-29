@@ -4,7 +4,7 @@ package auth;
 option go_package = "github.com/yuliaapopova/contracts/auth/go;auth";
 
 import "google/protobuf/empty.proto";
-import "auth/auth_model.proto";
+import "auth_model.proto";
 
 service Auth {
   rpc Register(RegisterRequest) returns (google.protobuf.Empty);
