@@ -103,7 +103,7 @@ service Gateway {
 
 // Запросы для аутентификации
 message RegisterRequest {
-    account.CreateUser user = 1; // профиль из account
+    account.User user = 1; // профиль из account
     string password = 2; // пароль как отдельное поле
 }
 

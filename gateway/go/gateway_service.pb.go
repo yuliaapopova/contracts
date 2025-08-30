@@ -29,7 +29,7 @@ const (
 // Запросы для аутентификации
 type RegisterRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	User          *_go.CreateUser        `protobuf:"bytes,1,opt,name=user,proto3" json:"user,omitempty"`         // профиль из account
+	User          *_go.User              `protobuf:"bytes,1,opt,name=user,proto3" json:"user,omitempty"`         // профиль из account
 	Password      string                 `protobuf:"bytes,2,opt,name=password,proto3" json:"password,omitempty"` // пароль как отдельное поле
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -65,7 +65,7 @@ func (*RegisterRequest) Descriptor() ([]byte, []int) {
 	return file_gateway_service_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *RegisterRequest) GetUser() *_go.CreateUser {
+func (x *RegisterRequest) GetUser() *_go.User {
 	if x != nil {
 		return x.User
 	}
@@ -880,9 +880,9 @@ var File_gateway_service_proto protoreflect.FileDescriptor
 
 const file_gateway_service_proto_rawDesc = "" +
 	"\n" +
-	"\x15gateway_service.proto\x12\agateway\x1a\x1cgoogle/api/annotations.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1bpagination/pagination.proto\x1a\x1baccount/account_model.proto\x1a\x15auth/auth_model.proto\"V\n" +
-	"\x0fRegisterRequest\x12'\n" +
-	"\x04user\x18\x01 \x01(\v2\x13.account.CreateUserR\x04user\x12\x1a\n" +
+	"\x15gateway_service.proto\x12\agateway\x1a\x1cgoogle/api/annotations.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1bpagination/pagination.proto\x1a\x1baccount/account_model.proto\x1a\x15auth/auth_model.proto\"P\n" +
+	"\x0fRegisterRequest\x12!\n" +
+	"\x04user\x18\x01 \x01(\v2\r.account.UserR\x04user\x12\x1a\n" +
 	"\bpassword\x18\x02 \x01(\tR\bpassword\"^\n" +
 	"\x10RegisterResponse\x12!\n" +
 	"\x04user\x18\x01 \x01(\v2\r.account.UserR\x04user\x12'\n" +
@@ -979,27 +979,27 @@ var file_gateway_service_proto_goTypes = []any{
 	(*UpdateCurrentUserRequest)(nil), // 15: gateway.UpdateCurrentUserRequest
 	(*DeleteUserRequest)(nil),        // 16: gateway.DeleteUserRequest
 	(*RefreshResponse)(nil),          // 17: gateway.RefreshResponse
-	(*_go.CreateUser)(nil),           // 18: account.CreateUser
-	(*_go.User)(nil),                 // 19: account.User
-	(*_go1.TokenPair)(nil),           // 20: auth.TokenPair
+	(*_go.User)(nil),                 // 18: account.User
+	(*_go1.TokenPair)(nil),           // 19: auth.TokenPair
+	(*_go.CreateUser)(nil),           // 20: account.CreateUser
 	(*_go2.Pagination)(nil),          // 21: pagination.Pagination
 	(*emptypb.Empty)(nil),            // 22: google.protobuf.Empty
 }
 var file_gateway_service_proto_depIdxs = []int32{
-	18, // 0: gateway.RegisterRequest.user:type_name -> account.CreateUser
-	19, // 1: gateway.RegisterResponse.user:type_name -> account.User
-	20, // 2: gateway.RegisterResponse.tokens:type_name -> auth.TokenPair
-	19, // 3: gateway.LoginResponse.user:type_name -> account.User
-	20, // 4: gateway.LoginResponse.tokens:type_name -> auth.TokenPair
-	18, // 5: gateway.CreateUserRequest.user:type_name -> account.CreateUser
-	19, // 6: gateway.GetUserResponse.user:type_name -> account.User
-	19, // 7: gateway.GetCurrentUserResponse.user:type_name -> account.User
+	18, // 0: gateway.RegisterRequest.user:type_name -> account.User
+	18, // 1: gateway.RegisterResponse.user:type_name -> account.User
+	19, // 2: gateway.RegisterResponse.tokens:type_name -> auth.TokenPair
+	18, // 3: gateway.LoginResponse.user:type_name -> account.User
+	19, // 4: gateway.LoginResponse.tokens:type_name -> auth.TokenPair
+	20, // 5: gateway.CreateUserRequest.user:type_name -> account.CreateUser
+	18, // 6: gateway.GetUserResponse.user:type_name -> account.User
+	18, // 7: gateway.GetCurrentUserResponse.user:type_name -> account.User
 	21, // 8: gateway.GetUsersRequest.pagination:type_name -> pagination.Pagination
-	19, // 9: gateway.GetUsersResponse.users:type_name -> account.User
+	18, // 9: gateway.GetUsersResponse.users:type_name -> account.User
 	21, // 10: gateway.GetUsersResponse.pagination:type_name -> pagination.Pagination
-	19, // 11: gateway.UpdateUserRequest.user:type_name -> account.User
-	19, // 12: gateway.UpdateCurrentUserRequest.user:type_name -> account.User
-	20, // 13: gateway.RefreshResponse.token_pair:type_name -> auth.TokenPair
+	18, // 11: gateway.UpdateUserRequest.user:type_name -> account.User
+	18, // 12: gateway.UpdateCurrentUserRequest.user:type_name -> account.User
+	19, // 13: gateway.RefreshResponse.token_pair:type_name -> auth.TokenPair
 	0,  // 14: gateway.Gateway.Register:input_type -> gateway.RegisterRequest
 	2,  // 15: gateway.Gateway.Login:input_type -> gateway.LoginRequest
 	4,  // 16: gateway.Gateway.Refresh:input_type -> gateway.RefreshRequest
